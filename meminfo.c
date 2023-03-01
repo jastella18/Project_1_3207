@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define BUFFER_SIZE 256
+
 // Function to read and parse /proc/meminfo
 void read_meminfo() {
     FILE* fp;
