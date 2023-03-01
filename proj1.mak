@@ -1,11 +1,14 @@
 all: cpuinfo meminfo processes
 
-cpuinfo/meminfo: memcpu.c
-    gcc -o memcpuinfo memcpu.c
+meminfo: meminfo.c
+    gcc -o meminfo meminfo.c
+
+cpuinfo: cpuinfo.c
+    gcc -o cpuinfo cpuinfo.c
 
 
 processes: ps.c
     gcc -o ps ps.c
 
 clean:
-    rm -f memcpuinfo ps
+    rm -f meminfo cpuinfo ps
