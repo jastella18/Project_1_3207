@@ -3,7 +3,7 @@
 #include <ctype.h>
 #include <dirent.h>
 #include <stdlib.h>
-#include <proj1.mak>
+
 
 void print_status(long tgid) {
   char path[40], line[100], *p;
