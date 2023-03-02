@@ -43,12 +43,15 @@ int main() {
     perror("opendir(/proc)");
     return 1;
   }
-  while (ent == readdir(proc)) {
+  ent = readdir(proc);
+  while (ent != NULL) {
     if (!isdigit(*ent->d_name)) continue;
 
     tgid = strtol(ent->d_name, NULL, 10);
 
     print_status(tgid);
+
+    ent= readdir(proc);
   }
   closedir(proc);
 }
